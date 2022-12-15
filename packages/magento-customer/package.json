@@ -22,6 +22,7 @@
     "@graphcommerce/graphql": "5.1.0",
     "@graphcommerce/graphql-mesh": "5.1.0",
     "@graphcommerce/image": "5.1.0",
+    "@graphcommerce/magento-customer-account": "5.1.0",
     "@graphcommerce/magento-graphql": "5.1.0",
     "@graphcommerce/magento-store": "5.1.0",
     "@graphcommerce/next-ui": "5.1.0",

@@ -1,7 +1,9 @@
 import { ApolloErrorSnackbar } from '@graphcommerce/ecommerce-ui'
+import { AccountDashboardAddressesDocument } from '@graphcommerce/magento-customer-account'
 import { useFormGqlMutation } from '@graphcommerce/react-hook-form'
 import { Trans } from '@lingui/react'
 import { Button } from '@mui/material'
+import { useCustomerQuery } from '../../hooks'
 import { DeleteCustomerAddressFormDocument } from './DeleteCustomerAddressForm.gql'
 
 export type DeleteCustomerAddressFormProps = {
@@ -10,10 +12,18 @@ export type DeleteCustomerAddressFormProps = {
 
 export function DeleteCustomerAddressForm(props: DeleteCustomerAddressFormProps) {
   const { addressId } = props
+  const { refetch } = useCustomerQuery(AccountDashboardAddressesDocument, {
+    fetchPolicy: 'cache-and-network',
+  })
   const { handleSubmit, error } = useFormGqlMutation(
     DeleteCustomerAddressFormDocument,
     { defaultValues: { id: addressId } },
-    { errorPolicy: 'all' },
+    {
+      errorPolicy: 'all',
+      onCompleted: async () => {
+        await refetch()
+      },
+    },
   )
   const submitHandler = handleSubmit(() => {})
 
