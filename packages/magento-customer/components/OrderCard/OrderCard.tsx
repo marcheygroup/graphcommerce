@@ -1,5 +1,6 @@
 import { Money } from '@graphcommerce/magento-store'
 import { extendableComponent, useDateTimeFormat } from '@graphcommerce/next-ui'
+import { Trans } from '@lingui/react'
 import { Box, styled, SxProps, Theme, Skeleton, ListItemButton } from '@mui/material'
 import { UseOrderCardItemImages } from '../../hooks/useOrderCardItemImages'
 import { OrderCardItemImage } from '../OrderCardItemImage/OrderCardItemImage'
@@ -100,13 +101,41 @@ export function OrderCard(props: OrderCardProps) {
           <OrderStateLabel
             items={items}
             renderer={{
-              Ordered: () => <span>Your order is being processed</span>,
-              Invoiced: () => <span>Your order has been invoiced</span>,
-              Shipped: () => <span>Your order is on its way!</span>,
-              Refunded: () => <span>Your order has been refunded</span>,
-              Canceled: () => <span>Your order has been canceled</span>,
-              Returned: () => <span>Your order has been returned</span>,
-              Partial: () => <span>Your order has been partially processed</span>,
+              Ordered: () => (
+                <span>
+                  <Trans id='Your order is being processed' />
+                </span>
+              ),
+              Invoiced: () => (
+                <span>
+                  <Trans id='Your order has been invoiced' />
+                </span>
+              ),
+              Shipped: () => (
+                <span>
+                  <Trans id='Your order is on its way!' />
+                </span>
+              ),
+              Refunded: () => (
+                <span>
+                  <Trans id='Your order has been refunded' />
+                </span>
+              ),
+              Canceled: () => (
+                <span>
+                  <Trans id='Your order has been canceled' />
+                </span>
+              ),
+              Returned: () => (
+                <span>
+                  <Trans id='Your order has been returned' />
+                </span>
+              ),
+              Partial: () => (
+                <span>
+                  <Trans id='Your order has been partially processed' />
+                </span>
+              ),
             }}
           />
         </OrderRow>

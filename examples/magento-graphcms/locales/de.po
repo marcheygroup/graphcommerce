@@ -19,6 +19,9 @@ msgstr "<0>{name}</0> wurde zu Ihrem Warenkorb hinzugefügt!"
 msgid "<0>{name}</0> has been added to your wishlist!"
 msgstr "<0>{name}</0> wurde zu Ihrer Wunschliste hinzugefügt!"
 
+msgid "Above <0/>"
+msgstr ""
+
 msgid "Account"
 msgstr "Konto"
 
@@ -73,6 +76,9 @@ msgstr "Werden Sie der Erste, der über alles Neues informiert!"
 msgid "Be the first to write a review!"
 msgstr "Schreiben Sie die erste Bewertung!"
 
+msgid "Below <0/>"
+msgstr ""
+
 msgid "Billing address"
 msgstr "Rechnungsadresse"
 
@@ -99,6 +105,9 @@ msgstr "Wählen Sie Ihre Bank und führen Sie Ihre Bestellung aus."
 
 msgid "City"
 msgstr "Stadt"
+
+msgid "Clear"
+msgstr ""
 
 msgid "Close"
 msgstr "Schließen"
@@ -331,6 +340,9 @@ msgstr "Oder folgen Sie diesen Links, um Sie wieder auf den Weg zu bringen!"
 msgid "Order #{orderId}"
 msgstr "Bestellung #{orderId}"
 
+msgid "Order details"
+msgstr ""
+
 msgid "Order not found"
 msgstr "Bestellung nicht gefunden"
 
@@ -342,6 +354,9 @@ msgstr "Bestellstatus"
 
 msgid "Order summary"
 msgstr "Bestellübersicht"
+
+msgid "Ordered"
+msgstr ""
 
 msgid "Ordered items"
 msgstr "Bestellte Produkte"
@@ -657,6 +672,27 @@ msgstr "Sie müssen sich anmelden, um fortzufahren"
 
 msgid "Your cart is empty"
 msgstr "Ihr Warenkorb ist leer"
+
+msgid "Your order has been canceled"
+msgstr ""
+
+msgid "Your order has been invoiced"
+msgstr ""
+
+msgid "Your order has been partially processed"
+msgstr ""
+
+msgid "Your order has been refunded"
+msgstr ""
+
+msgid "Your order has been returned"
+msgstr ""
+
+msgid "Your order is being processed"
+msgstr ""
+
+msgid "Your order is on its way!"
+msgstr ""
 
 msgid "Your session is expired"
 msgstr "Ihre Sitzung ist abgelaufen"

@@ -7,6 +7,7 @@ import {
   extendableComponent,
   useDateTimeFormat,
 } from '@graphcommerce/next-ui'
+import { i18n } from '@lingui/core'
 import { Trans } from '@lingui/react'
 import { Skeleton, styled, SxProps, Theme } from '@mui/material'
 import { TrackingLink } from '../TrackingLink/TrackingLink'
@@ -135,7 +136,7 @@ export function OrderDetails(props: OrderDetailsProps) {
   if (loading) {
     return (
       <SectionContainer
-        labelLeft='Order details'
+        labelLeft={i18n._(/* i18n*/ 'Order details')}
         sx={[
           (theme) => ({
             '& .SectionHeader-root': {
@@ -207,7 +208,7 @@ export function OrderDetails(props: OrderDetailsProps) {
 
   return (
     <SectionContainer
-      labelLeft='Order details'
+      labelLeft={i18n._(/* i18n*/ 'Order details')}
       borderBottom
       sx={[
         (theme) => ({
@@ -232,7 +233,7 @@ export function OrderDetails(props: OrderDetailsProps) {
             <Trans id='Order status' />
           </OrderDetailTitle>
           <div>
-            Ordered: {order_date && dateFormatter.format(new Date(order_date))}
+            <Trans id='Ordered' />: {order_date && dateFormatter.format(new Date(order_date))}
             {/* Shipped */}
           </div>
         </div>
