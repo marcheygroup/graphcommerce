@@ -24,12 +24,6 @@ export function useScrollTo() {
         to = incoming
       }
 
-      if (process.env.NODE_ENV === 'development' && scroll.animating.get() && retrigger === 0) {
-        console.warn(
-          `scrollTo triggered while another animation is in progress. This cancels the current animation and creates a new one.`,
-        )
-      }
-
       if (process.env.NODE_ENV === 'development' && retrigger > 5) {
         console.error(
           `scrollTo triggered more than 5 times, is the element resizing constantly? Bailing out.`,
@@ -47,6 +41,12 @@ export function useScrollTo() {
 
       const xDone = new Promise<void>((onComplete) => {
         if (ref.scrollLeft !== to.x) {
+          if (process.env.NODE_ENV === 'development' && scroll.animating.get() && retrigger === 0) {
+            console.warn(
+              `scrollTo X triggered while another animation is in progress. This cancels the current animation and creates a new one.`,
+            )
+          }
+
           disableSnap()
 
           stop.push(
@@ -68,6 +68,12 @@ export function useScrollTo() {
 
       const yDone = new Promise<void>((onComplete) => {
         if (ref.scrollTop !== to.y) {
+          if (process.env.NODE_ENV === 'development' && scroll.animating.get() && retrigger === 0) {
+            console.warn(
+              `scrollTo Y triggered while another animation is in progress. This cancels the current animation and creates a new one.`,
+            )
+          }
+
           disableSnap()
           stop.push(
             animate({
