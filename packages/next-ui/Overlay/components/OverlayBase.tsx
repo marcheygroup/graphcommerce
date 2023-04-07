@@ -15,11 +15,11 @@ import {
   useMotionValue,
   useTransform,
 } from 'framer-motion'
-import framesync from 'framesync'
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { LayoutProvider } from '../../Layout/components/LayoutProvider'
 import { ExtendableComponent, extendableComponent } from '../../Styles'
 import { useMatchMedia } from '../../hooks/useMatchMedia'
+import { Direction } from '@graphcommerce/framer-next-pages'
 
 export type LayoutOverlayVariant = 'left' | 'bottom' | 'right'
 export type LayoutOverlaySize = 'floating' | 'minimal' | 'full'
@@ -45,7 +45,7 @@ export type LayoutOverlayBaseProps = {
   sx?: SxProps<Theme>
   sxBackdrop?: SxProps<Theme>
   active: boolean
-  direction?: 1 | -1
+  direction?: Direction
   onClosed: () => void
   offsetPageY?: number
   isPresent: boolean
@@ -119,7 +119,8 @@ export function OverlayBase(incomingProps: LayoutOverlayBaseProps) {
     props.smSpacingTop ?? ((theme) => `calc(${theme.appShell.headerHeightSm} * 0.5)`)
   )(th)
 
-  const { scrollerRef, snap, scroll, getScrollSnapPositions, disableSnap } = useScrollerContext()
+  const ctx = useScrollerContext()
+  const { scrollerRef, snap, scroll, getScrollSnapPositions, disableSnap, enableSnap } = ctx
   const scrollTo = useScrollTo()
 
   const beforeRef = useRef<HTMLDivElement>(null)
@@ -133,7 +134,7 @@ export function OverlayBase(incomingProps: LayoutOverlayBaseProps) {
 
   const match = useMatchMedia()
   const positions = useConstant(() => ({
-    open: { x: motionValue(0), y: motionValue(0), visible: motionValue(0) },
+    open: { x: motionValue(0), y: motionValue(0), visible: motionValue(direction === 0 ? 1 : 0) },
     closed: { x: motionValue(0), y: motionValue(0) },
   }))
 
@@ -271,17 +272,27 @@ export function OverlayBase(incomingProps: LayoutOverlayBaseProps) {
 
   // When the component is mounted, we need to set the initial position of the overlay.
   useIsomorphicLayoutEffect(() => {
-    const scroller = scrollerRef.current
+    const scroller = ctx.scrollerRef.current
 
     if (!scroller || !isPresent) return
 
     if (variant() === 'right') document.body.style.overflow = 'hidden'
 
-    if (position.get() !== OverlayPosition.OPENED && !scroll.animating.get()) {
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      scrollTo(openClosePositions().open).then(() => position.set(OverlayPosition.OPENED))
+    if (position.get() !== OverlayPosition.OPENED) {
+      if (direction === 0) {
+        ctx.disableSnap()
+        scroller.scrollTop = positions.open.y.get()
+        scroller.scrollLeft = positions.open.x.get()
+        ctx.scroll.y.set(positions.open.y.get())
+        ctx.scroll.x.set(positions.open.x.get())
+        position.set(OverlayPosition.OPENED)
+        ctx.enableSnap()
+      } else if (!ctx.scroll.animating.get()) {
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
+        scrollTo(openClosePositions().open).then(() => position.set(OverlayPosition.OPENED))
+      }
     }
-  }, [isPresent, openClosePositions, position, scroll.animating, scrollTo, scrollerRef, variant])
+  }, [ctx, direction, isPresent, openClosePositions, position, positions, scrollTo, variant])
 
   // When the overlay is closed by navigating away, we're closing the overlay.
   useEffect(() => {

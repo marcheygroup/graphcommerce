@@ -5,7 +5,7 @@ import { PrivateRouteInfo } from 'next/dist/shared/lib/router/router'
 import { AppPropsType } from 'next/dist/shared/lib/utils'
 import { NextRouter, Router } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
-import { pageContext } from '../context/pageContext'
+import { Direction, pageContext } from '../context/pageContext'
 import type { PageComponent, PageItem, UpPage } from '../types'
 import { Page } from './Page'
 import { PageRenderer } from './PageRenderer'
@@ -57,7 +57,8 @@ export function FramerNextPages(props: PagesProps) {
   const idx = routerKeys.indexOf(key)
 
   const prevHistory = useRef<number>(-1)
-  const direction = idx >= prevHistory.current ? 1 : -1
+  let direction: Direction = idx >= prevHistory.current ? 1 : -1
+  if (prevHistory.current === -1) direction = 0
 
   prevHistory.current = idx
 
@@ -66,7 +67,7 @@ export function FramerNextPages(props: PagesProps) {
   /** We never need to render anything beyong the current idx and we can safely omit everything */
   items.current = items.current.slice(0, idx + 1)
 
-  let activeItem: PageItem = items.current[idx]
+  let activeItem = items.current[idx]
 
   const currentItem = items.current[idx]
 
