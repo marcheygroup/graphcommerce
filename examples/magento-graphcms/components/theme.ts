@@ -195,7 +195,7 @@ const createOverrides = (theme: Theme): Components => ({
       '#__next': {
         position: 'relative',
       },
-      'picture img': {
+      'picture img, img': {
         filter: 'brightness(1.03)',
         willChange: 'filter',
       },

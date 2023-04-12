@@ -52,7 +52,7 @@ function DemoRowLinks(props: PluginProps<RowLinksProps>) {
             '&:has(video) .MuiBox-root': {
               mixBlendMode: 'unset',
             },
-            '& picture, & video': {
+            '& > picture, & > video, & > img': {
               gridArea: '1 / 1',
             },
             '& video': {

@@ -58,8 +58,6 @@ export type ProductListItemProps = BaseProps & {
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>, item: ProductListItemFragment) => void
 }
 
-const StyledImage = styled(Image)({})
-
 export function ProductListItem(props: ProductListItemProps) {
   const {
     subTitle,
@@ -122,25 +120,26 @@ export function ProductListItem(props: ProductListItemProps) {
           ),
           overflow: 'hidden',
           padding: responsiveVal(8, 12),
-          '& > picture': {
-            gridArea: `1 / 1 / 3 / 3`,
-            margin: `calc(${responsiveVal(8, 12)} * -1)`,
-          },
         })}
         className={classes.imageContainer}
       >
         {small_image ? (
-          <StyledImage
-            layout='fill'
+          <Image
             width={1}
             height={1}
             sizes={sizes}
-            dontReportWronglySizedImages={dontReportWronglySizedImages}
+            // dontReportWronglySizedImages={dontReportWronglySizedImages}
             src={small_image.url ?? ''}
             alt={small_image.label ?? ''}
             className={classes.image}
             loading={loading}
-            sx={{ objectFit: 'contain', aspectRatio: `${aspectRatio[0] / aspectRatio[1]}` }}
+            sx={{
+              gridArea: `1 / 1 / 3 / 3`,
+              width: '100%',
+              height: 'auto',
+              objectFit: 'contain',
+              aspectRatio: `${aspectRatio[0]}/${aspectRatio[1]}`,
+            }}
           />
         ) : (
           <Box
