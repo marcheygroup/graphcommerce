@@ -1,0 +1,7 @@
+mutation CreateModel($createModel: CreateModelInput!) {
+  createModel(data: $createModel) {
+    migration {
+      id
+    }
+  }
+}

@@ -1,13 +1,8 @@
 /**
  * GraphQL Configuration
  *
- * [GraphQL VSCode exstension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql)
- *
- * Todo(paales): implement environment variables support:
- *
- * - https://github.com/graphql/vscode-graphql/pull/267
- * - https://github.com/graphql/vscode-graphql/issues/257
- * - https://github.com/graphql/vscode-graphql/issues/127
+ * [GraphQL VSCode
+ * exstension](https://marketplace.visualstudio.com/items?itemName=GraphQL.vscode-graphql)
  */
 module.exports = {
   projects: {
@@ -20,7 +15,7 @@ module.exports = {
       documents: [
         'examples/magento-graphcms/components/**/*.graphql',
         'examples/magento-graphcms/graphql/**/*.graphql',
-        'packages/**/*.graphql',
+        'packages/!hygraph-cli/**/*.graphql',
       ],
       extensions: {
         languageService: {
@@ -32,6 +27,10 @@ module.exports = {
           },
         },
       },
+    },
+    HygraphManagementApi: {
+      schema: ['https://management.hygraph.com/graphql'],
+      documents: ['packages/hygraph-cli/**/*.graphql'],
     },
   },
 }
