@@ -164,6 +164,8 @@ export type GraphCommerceConfig = {
    * Project settings -> API Access -> High Performance Read-only Content API
    */
   hygraphEndpoint: Scalars['String'];
+  /** Hygraph Project ID. **Only used for migrations.** */
+  hygraphProjectId?: InputMaybe<Scalars['ID']>;
   /**
    * Content API. **Only used for migrations.**
    *
@@ -190,6 +192,12 @@ export type GraphCommerceConfig = {
    *   - Delete existing components
    *   - Update remote sources
    *   - Delete remote sources
+   *   - Read existing environments
+   *   - Read public content views
+   *   - Create public content views
+   *   - Update public content views
+   *   - Delete public content views
+   *   - Can see schema view
    *
    * ```
    * GC_HYGRAPH_WRITE_ACCESS_ENDPOINT="https://...hygraph.com/v2/..."
@@ -342,6 +350,7 @@ export function GraphCommerceConfigSchema(): z.ZodObject<Properties<GraphCommerc
     googleRecaptchaKey: z.string().nullish(),
     googleTagmanagerId: z.string().nullish(),
     hygraphEndpoint: z.string().min(1),
+    hygraphProjectId: z.string().nullish(),
     hygraphWriteAccessEndpoint: z.string().nullish(),
     hygraphWriteAccessToken: z.string().nullish(),
     legacyProductRoute: z.boolean().nullish(),

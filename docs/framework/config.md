@@ -160,6 +160,10 @@ The Google Tagmanager ID to be used on the site.
 
 This value is required even if you are configuring different values for each locale.
 
+#### `hygraphProjectId: ID`
+
+Hygraph Project ID. **Only used for migrations.**
+
 #### `hygraphWriteAccessEndpoint: String`
 
 Content API. **Only used for migrations.**
@@ -187,6 +191,12 @@ Project settings -> API Access -> Permanent Auth Tokens
   - Delete existing components
   - Update remote sources
   - Delete remote sources
+  - Read existing environments
+  - Read public content views
+  - Create public content views
+  - Update public content views
+  - Delete public content views
+  - Can see schema view
 
 ```
 GC_HYGRAPH_WRITE_ACCESS_ENDPOINT="https://...hygraph.com/v2/..."
