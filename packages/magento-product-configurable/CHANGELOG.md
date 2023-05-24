@@ -1,5 +1,15 @@
 # Change Log
 
+## 6.2.0
+
+### Patch Changes
+
+- [#1940](https://github.com/graphcommerce-org/graphcommerce/pull/1940) [`a766c0d8a`](https://github.com/graphcommerce-org/graphcommerce/commit/a766c0d8a2f166cd324482bb80799341f5252fe0) - Product specifications wouldn't display for simple products ([@Giovanni-Schroevers](https://github.com/Giovanni-Schroevers))
+
+- [#1898](https://github.com/graphcommerce-org/graphcommerce/pull/1898) [`e28af9ea6`](https://github.com/graphcommerce-org/graphcommerce/commit/e28af9ea6c0bf9b904df880b5c2a13a2f580727b) - ConfigurableProduct super attributes that were regular dropdowns would throw an error. ([@paales](https://github.com/paales))
+
+- [#1914](https://github.com/graphcommerce-org/graphcommerce/pull/1914) [`742520b03`](https://github.com/graphcommerce-org/graphcommerce/commit/742520b038b367026ac7e3e364a0147415f17301) - ConfigurableOptionsSelection causes a cache error ([@paales](https://github.com/paales))
+
 ## 6.2.0-canary.23
 
 ### Patch Changes

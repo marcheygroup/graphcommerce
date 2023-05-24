@@ -1,5 +1,11 @@
 # Change Log
 
+## 6.2.0
+
+### Patch Changes
+
+- [#1914](https://github.com/graphcommerce-org/graphcommerce/pull/1914) [`4ab34615f`](https://github.com/graphcommerce-org/graphcommerce/commit/4ab34615f9a0425010e0d793f20e4853f85a69e3) - When an error is masked, do not remask them ([@paales](https://github.com/paales))
+
 ## 6.2.0-canary.23
 
 ## 6.2.0-canary.22

@@ -1,5 +1,11 @@
 # @graphcommerce/algolia-search
 
+## 6.2.0
+
+### Minor Changes
+
+- [#1909](https://github.com/graphcommerce-org/graphcommerce/pull/1909) [`7a1f1bb38`](https://github.com/graphcommerce-org/graphcommerce/commit/7a1f1bb382ece4167bd3816d6f2cc41ffae56710) - New Algolia search package! ([@mikekeehnen](https://github.com/mikekeehnen))
+
 ## 6.2.0-canary.23
 
 ## 6.2.0-canary.22

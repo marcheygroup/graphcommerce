@@ -1,5 +1,19 @@
 # Change Log
 
+## 6.2.0
+
+### Minor Changes
+
+- [#1915](https://github.com/graphcommerce-org/graphcommerce/pull/1915) [`f4a8c3881`](https://github.com/graphcommerce-org/graphcommerce/commit/f4a8c388183e17c52e7f66536c5448749f494d7f) - Added the ability to create functional plugins for usage in non-component areas and hooks ([@paales](https://github.com/paales))
+
+### Patch Changes
+
+- [#1925](https://github.com/graphcommerce-org/graphcommerce/pull/1925) [`2b595bf13`](https://github.com/graphcommerce-org/graphcommerce/commit/2b595bf13f3725a77661586cce021ce8d4791558) - Fixed bug for type error in `demoConfig.ts`. All storefront config values in the demo config are now optional. ([@mikekeehnen](https://github.com/mikekeehnen))
+
+- [#1924](https://github.com/graphcommerce-org/graphcommerce/pull/1924) [`04581f619`](https://github.com/graphcommerce-org/graphcommerce/commit/04581f619c609f2f6ca5268ee5effb6a1db3f0eb) - Use the latest branch from graphql-mesh so that all versions are in sync ([@paales](https://github.com/paales))
+
+- [#1928](https://github.com/graphcommerce-org/graphcommerce/pull/1928) [`09d6a7abd`](https://github.com/graphcommerce-org/graphcommerce/commit/09d6a7abdf44c04a37f59432e9fc0c0722e6df76) - Added number to config value formatter, so Graphcommerce config accepts number values. ([@mikekeehnen](https://github.com/mikekeehnen))
+
 ## 6.2.0-canary.23
 
 ## 6.2.0-canary.22

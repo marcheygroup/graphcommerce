@@ -1,5 +1,21 @@
 # Change Log
 
+## 6.2.0
+
+### Patch Changes
+
+- [#1934](https://github.com/graphcommerce-org/graphcommerce/pull/1934) [`96ac0320a`](https://github.com/graphcommerce-org/graphcommerce/commit/96ac0320a30bc55a6db5d46663d28b552fda4db6) - Fixed floating overlays not closing when clicking beside the overlay ([@bramvanderholst](https://github.com/bramvanderholst))
+
+- [#1913](https://github.com/graphcommerce-org/graphcommerce/pull/1913) [`17eac116d`](https://github.com/graphcommerce-org/graphcommerce/commit/17eac116dbf2b811a67bfefd735d5a5a3e2b20dc) - Fixed zIndex issue with CartFab and ScrollerButton ([@bramvanderholst](https://github.com/bramvanderholst))
+
+- [#1913](https://github.com/graphcommerce-org/graphcommerce/pull/1913) [`61b1987eb`](https://github.com/graphcommerce-org/graphcommerce/commit/61b1987eb8d37566cb4675f0ae962925aef2fc6d) - Fixed RowLinks ScrollerButton alignment when content is shown beside the Scroller ([@bramvanderholst](https://github.com/bramvanderholst))
+
+- [#1930](https://github.com/graphcommerce-org/graphcommerce/pull/1930) [`c8d023e9e`](https://github.com/graphcommerce-org/graphcommerce/commit/c8d023e9e874131cd9f8fe192b1fca5fe1a26ee3) - Fix the close menu on search and add the option to secondary menu items ([@StefanAngenent](https://github.com/StefanAngenent))
+
+- [#1897](https://github.com/graphcommerce-org/graphcommerce/pull/1897) [`f44d7cec6`](https://github.com/graphcommerce-org/graphcommerce/commit/f44d7cec61766f4768c30d29b211a12f2846e9f6) - Overlays can now be configured to get a bgColor ([@FrankHarland](https://github.com/FrankHarland))
+
+- [#1939](https://github.com/graphcommerce-org/graphcommerce/pull/1939) [`0cdccf681`](https://github.com/graphcommerce-org/graphcommerce/commit/0cdccf6817d6a769f59cccb68b1b1b8b4405cbd0) - Make blogListItem date prop optional ([@JoshuaS98](https://github.com/JoshuaS98))
+
 ## 6.2.0-canary.23
 
 ## 6.2.0-canary.22

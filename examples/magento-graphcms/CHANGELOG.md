@@ -1,5 +1,29 @@
 # Change Log
 
+## 6.2.0
+
+### Minor Changes
+
+- [#1912](https://github.com/graphcommerce-org/graphcommerce/pull/1912) [`a43d389e9`](https://github.com/graphcommerce-org/graphcommerce/commit/a43d389e956fe69b73238b12c98c781b7044e4bb) - Added dynamic rows feature and better performance for Hygraph ([@JoshuaS98](https://github.com/JoshuaS98))
+
+### Patch Changes
+
+- [#1914](https://github.com/graphcommerce-org/graphcommerce/pull/1914) [`c237f2f2c`](https://github.com/graphcommerce-org/graphcommerce/commit/c237f2f2c87d9e3c8aefc536a13b5b9203556f27) - Category pages now have the ability to select the displayed pageSize of a page and a non-default pageSize and a non-default sort option will now receive noindex meta tags when viewed. ([@paales](https://github.com/paales))
+
+- [#1911](https://github.com/graphcommerce-org/graphcommerce/pull/1911) [`c10d6d5be`](https://github.com/graphcommerce-org/graphcommerce/commit/c10d6d5beb0d1560d33e3e301d88fa9201515133) - Added missing translations for the ProductSidebarDelivery ([@rustmaestro](https://github.com/rustmaestro))
+
+- [#1897](https://github.com/graphcommerce-org/graphcommerce/pull/1897) [`4936a38fb`](https://github.com/graphcommerce-org/graphcommerce/commit/4936a38fbd99fa366eae1a5955fa61d6387a2bb8) - MuiFab couldn't be given a primary or secondary color ([@FrankHarland](https://github.com/FrankHarland))
+
+- [#1914](https://github.com/graphcommerce-org/graphcommerce/pull/1914) [`000556331`](https://github.com/graphcommerce-org/graphcommerce/commit/000556331f5379c71d7edca541fd0b145b7dc435) - When there is an error in the cart, disable the checkout buttons ([@paales](https://github.com/paales))
+
+- [#1914](https://github.com/graphcommerce-org/graphcommerce/pull/1914) [`d11edae41`](https://github.com/graphcommerce-org/graphcommerce/commit/d11edae41089d37d0806ec11b65e66c03a3d7cfa) - Sort option weren't visible in the ProductFiltersProAllFilters sidebar ([@paales](https://github.com/paales))
+
+- [#1914](https://github.com/graphcommerce-org/graphcommerce/pull/1914) [`38d6c4888`](https://github.com/graphcommerce-org/graphcommerce/commit/38d6c488850013b36cae9f388996039219c1327e) - Errors in the cart didn't allow for recovery from the faulty state ([@paales](https://github.com/paales))
+
+- [#1897](https://github.com/graphcommerce-org/graphcommerce/pull/1897) [`b78dd132c`](https://github.com/graphcommerce-org/graphcommerce/commit/b78dd132c435da847139d2f415c9ab8067d3941f) - Feature/product comparer ([@FrankHarland](https://github.com/FrankHarland))
+
+- [#1935](https://github.com/graphcommerce-org/graphcommerce/pull/1935) [`f88789698`](https://github.com/graphcommerce-org/graphcommerce/commit/f88789698098c20556a42c6317ccc5ce287002e2) - Added missing translation for "Sort" ([@bramvanderholst](https://github.com/bramvanderholst))
+
 ## 6.2.0-canary.23
 
 ## 6.2.0-canary.22
